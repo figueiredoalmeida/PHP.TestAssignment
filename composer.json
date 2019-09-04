@@ -1,0 +1,7 @@
+{
+    "name": "linkfire/php-assignment",
+    "description": "linkfire PHP assignment",
+    "require-dev": {
+        "phpunit/phpunit": "8.*"
+    }
+}

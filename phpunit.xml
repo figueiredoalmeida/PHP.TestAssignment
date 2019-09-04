@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./tests/helpers/TestHelper.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         verbose="true"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuite name="Redirector">
+        <directory suffix=".Test.php">./tests</directory>
+    </testsuite>
+    <filter>
+    <whitelist processUncoveredFilesFromWhitelist="true" addUncoveredFilesFromWhitelist="true">
+        <directory suffix=".php">app</directory>
+        <exclude>
+            <directory suffix=".php">app/controllers</directory>
+        </exclude>
+    </whitelist>
+    </filter>
+</phpunit>
