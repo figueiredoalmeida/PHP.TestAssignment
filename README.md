@@ -10,8 +10,6 @@ We will evaluate you on the following parameters:
 * Ability to organize and document your code.
 * Ability write good and clear unit tests.
 
-To make evaluation easier, please fork this repository on your personal Github account and create a pull request when finished.
-
 Expected time to solve this assignment is 2 to 4 hours.
 
 ## Tasks
