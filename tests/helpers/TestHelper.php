@@ -14,7 +14,6 @@ set_include_path(
     ROOT_PATH . PATH_SEPARATOR . get_include_path()
 );
 // Use the application autoloader to autoload the classes
-// Autoload the dependencies found in composer
 $loader = new Loader();
 
 $loader->registerDirs(
@@ -26,6 +25,7 @@ $loader->registerDirs(
 $loader->registerNamespaces(
     [
         "Linkfire\Asssignment" => APP_PATH,
+        "Test\Linkfire\Assignment\Helpers" => ROOT_PATH . '/helpers/',
     ]
 );
 

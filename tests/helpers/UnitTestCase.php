@@ -1,15 +1,13 @@
 <?php
 
-namespace Test\Linkfire\Redirector\Helpers;
+namespace Test\Linkfire\Assignment\Helpers;
 
 use Phalcon\Di;
 use Phalcon\Test\UnitTestCase as PhalconTestCase;
 
 abstract class UnitTestCase extends PhalconTestCase
 {
-    use \phpmock\phpunit\PHPMock;
-
-    public function setUp()
+    public function setUp() : void
     {
         try {
             parent::setUp();
