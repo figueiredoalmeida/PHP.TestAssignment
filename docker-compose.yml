@@ -15,3 +15,33 @@ services:
       - 80:80
     links:
       - php
+      - mysql
+  myadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=127.0.0.1
+    restart: always
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql:/var/lib/mysql/
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+#      MYSQL_DATABASE: 'linkfire'
+#      MYSQL_HOST: '127.0.0.1'
+#      MYSQL_PASSWORD: '12345678'
+#      MYSQL_ROOT_PASSWORD: '12345'
+volumes:
+  mysql:

@@ -2,12 +2,15 @@
 declare(strict_types=1);
 namespace Linkfire\Assignment\Controllers;
 
-use Phalcon\Mvc\Controller;
-
-class IndexController extends Controller
+/**
+ * Class IndexController
+ * @package App\Controllers
+ */
+class IndexController extends \Phalcon\Mvc\Controller
 {
     public function indexAction()
     {
-        echo 'Assignment index';
+        echo "<h1>Linkfire - Music Genres API</h1>";
     }
+
 }

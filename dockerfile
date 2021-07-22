@@ -96,6 +96,9 @@ RUN rm -rf docker
 # Main image
 FROM php:${PHP_VERSION}-fpm-alpine as main
 
+# [3 - PDO/mysql extensions - Rodrigo] - Installing the required extensions for the database
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
+
 ARG PHP_EXTENSION_DIR
 ARG PHP_INI_DIR
 
@@ -119,4 +122,3 @@ RUN apk add --no-cache socat
 HEALTHCHECK CMD echo 'testing' | socat TCP:127.0.0.1:9000 - || exit 1
 
 CMD ["/app/init.sh"]
-
